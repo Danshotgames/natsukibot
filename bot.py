@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
+import os
 
 client = discord.Client()
 
@@ -220,6 +221,7 @@ async def test( ctx ):
 
 #Connect
 
-token = open( 'token.txt', 'r' ).readline()
+token = os.environ.get('TOKEN')
 
-client.run( token )    
+client.run(str(token))
+  
