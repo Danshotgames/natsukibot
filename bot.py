@@ -101,14 +101,11 @@ async def mute (ctx, member: discord.Member):
 @client.command(pass_context = True)
 
 async def time (ctx):
-	
-	emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = None )
-	#emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
-	
-        now_date = datetime.datetime.now()
-	
-	emb.add_field( name ='----------------', value = 'Время по МСК: {}'.format(now_date) )
-        await ctx.send(embed = emb)
+    await ctx.channel.purge(limit=1) 
+    emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = None )
+    now_date = datetime.datetime.now()
+    emb.add_field( name ='----------------', value = 'Время по МСК: {}'.format(now_date) )
+    await ctx.send(embed = emb)
 #Unmute
 @client.command()
 @commands.has_permissions(kick_members=True)
