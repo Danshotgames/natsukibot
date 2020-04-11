@@ -75,7 +75,7 @@ async def on_ready():
     print('Ready.')
     print('------------')
     print( 'bot connected' )
-
+    await client.change_presence( status = discord.Status.online, activity = discord.Game(' //info'))
 
 #Mute
 
