@@ -103,7 +103,7 @@ async def mute (ctx, member: discord.Member):
 async def time (ctx):
 	
 	emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = None )
-	emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+	#emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
 	
         now_date = datetime.datetime.now()
 	
