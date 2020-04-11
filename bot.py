@@ -104,7 +104,7 @@ async def time (ctx):
     await ctx.channel.purge(limit=1) 
     emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = None )
     now_date = datetime.datetime.now()
-    emb.add_field( name ='----------------', value = 'Время по МСК: {}'.format(now_date) )
+    emb.add_field( name ='-----', value = 'Время по МСК: {}'.format(now_date) )
     await ctx.send(embed = emb)
 #Unmute
 @client.command()
@@ -173,6 +173,7 @@ async def info( ctx ):
     emb.add_field( name ='//ban', value = 'Заблокировать участника')
     emb.add_field( name ='//mute', value = 'Ограничить чат участника')
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
+    emb.add_field( name ='//time', value = 'Посмотреть текущее время')
     await ctx.send(embed = emb)
     
 #Kick
