@@ -101,7 +101,7 @@ async def mute (ctx, member: discord.Member):
 @client.command(pass_context = True)
 
 async def time (ctx):
-	now_date = datetime.datetame.now()
+	now_date = datetime.datetime.now()
 	emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = 'https://cdn.freelance.ru/img/portfolio/pics/00/37/77/3635167.jpg?mt=4294b6aa' )
 	emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
 	emb.add_field( name ='----------------', value = 'Время по МСК: {}'.format(now_date) )
