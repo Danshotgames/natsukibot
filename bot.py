@@ -16,7 +16,7 @@ client = commands.Bot( command_prefix = '//' )
 serverid = 625001454666776586
 rainbowrolename = "АДМИН"
 delay = 1
-link = ''
+link = 'https://youtu.be/81MglUZp5-I'
 
 
 
