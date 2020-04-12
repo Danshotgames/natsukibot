@@ -4,13 +4,71 @@ import asyncio
 import random
 import os
 import datetime
+import json	
 
 client = discord.Client()
 
 client = commands.Bot( command_prefix = '//' )
 
-	
+amounts = {}
 
+@client.event
+async def on_ready():
+    global amounts
+    try:
+        with open('amounts.json') as f:
+            amounts = json.load(f)
+    except FileNotFoundError:
+        print("Could not load amounts.json")
+        amounts = {}
+
+@client.command(pass_context=True)
+async def balance(ctx):
+    await ctx.channel.purge(limit=1)
+    id = ctx.message.author.id
+    if id in amounts:
+        await ctx.send("У тебя {} монет в банке".format(amounts[id]))
+    else:
+        await ctx.send("Ты не имеешь аккаунта! Зарегестрируйся c помощью комманды //register")
+
+@client.command(pass_context=True)
+async def register(ctx):
+    await ctx.channel.purge(limit=1)
+    id = ctx.message.author.id
+    if id in amounts:
+        await ctx.send("Ты уже имеешь аккаунт!")
+    if id not in amounts:
+        amounts[id] = 100
+        await ctx.send("Ты успешно зарегестрирован!")
+        _save()
+
+
+@client.command(pass_context=True)
+async def transfer(ctx, amount: int, other: discord.Member):
+    await ctx.channel.purge(limit=1)
+    primary_id = ctx.message.author.id
+    other_id = other.id
+    if primary_id not in amounts:
+        await ctx.send("Ты не имеешь аккаунта! Зарегестрируйся c помощью комманды //register")
+    elif other_id not in amounts:
+        await ctx.send("Данный пользователь не имеет аккаунта")
+    elif amounts[primary_id] < amount:
+        await ctx.send("Недостаточно средств")
+    else:
+        amounts[primary_id] -= amount
+        amounts[other_id] += amount
+        await ctx.send("Успешный перевод!")
+    _save()
+
+def _save():
+    with open('amounts.json', 'w+') as f:
+        json.dump(amounts, f)
+
+@client.command()
+async def save():
+    _save()
+   
+	
 #Variables
 
 serverid = 625001454666776586
