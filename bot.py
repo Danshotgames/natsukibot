@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 import asyncio
 import random
 import os
@@ -99,13 +99,16 @@ async def mute (ctx, member: discord.Member):
 #Time
 
 @client.command(pass_context = True)
-
-async def time (ctx):
+#@tasks.loop(seconds=60)
+async def time(ctx):
     await ctx.channel.purge(limit=1) 
+    offset = datetime.timezone(datetime.timedelta(hours=3))
+    moscow_time = datetime.datetime.now(offset)
+    #await client.change_presence(status=discord.Status.online, activity=discord.Game(f'{moscow_time.hour} : {moscow_time.minute}'))
     emb = discord.Embed( title = 'ВРЕМЯ!',colour = discord.Color.purple(),url = None )
-    now_date = datetime.datetime.now()
-    emb.add_field( name ='-----', value = 'Время по МСК: {}'.format(now_date) )
+    emb.add_field( name ='---------', value = f'Время МСК: {moscow_time.hour} : {moscow_time.minute}') 
     await ctx.send(embed = emb)
+
 #Unmute
 @client.command()
 @commands.has_permissions(kick_members=True)
