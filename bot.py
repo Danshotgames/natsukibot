@@ -147,7 +147,12 @@ async def new( ctx):
     
     await ctx.channel.purge (limit = 1)
     
-    emb = discord.Embed( title = 'РАССЫЛКА!', description = f'У Ская вышло новое видео!!! Бегом смотреть! Ссылка: {link}',colour = discord.Color.purple(),url = None )
+    emb = discord.Embed( title = 'РАССЫЛКА!',colour = discord.Color.purple(),url = None )
+
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    
+    emb.add_field( name ='---------------', value = '@everyone У Ская вышло новое видео!!! Бегом смотреть! Ссылка: https://youtu.be/81MglUZp5-I' )
+
     await ctx.send(embed = emb)
 
 #Clear
@@ -155,7 +160,7 @@ async def new( ctx):
 @client.command( pass_context = True )
 @commands.has_permissions( kick_members = True )
 
-async def clear( ctx, amount = 100 ):
+async def clear( ctx, amount = 1000 ):
     await ctx.channel.purge(limit = amount+1)
 
     emb = discord.Embed( title = 'УДАЛЕНИЕ', description = f'Удалено: {amount} сообщений',colour = discord.Color.purple(),url = None )
