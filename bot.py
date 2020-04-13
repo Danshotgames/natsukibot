@@ -383,6 +383,7 @@ async def info( ctx ):
     emb.add_field( name ='//register', value = 'Зарегистрировать счет в банке')
     emb.add_field( name ='//balance', value = 'Посмотреть свой баланс')
     emb.add_field( name ='//transfer', value = 'Перекинуть деньги')
+    emb.add_field( name ='//donate', value = 'Помочь клану')
     emb.add_field( name ='@Natsuki_bot', value = 'by @Rayyy, ver 1.7')
     await ctx.send(embed = emb)
     
@@ -439,8 +440,17 @@ async def test( ctx ):
     #emb.set_thumbnail( url = '' )
 
     await ctx.send(embed = emb)
-
 #Connect
+
+@client.command( pass_context = True )
+async def donate( ctx ):
+    await ctx.channel.purge (limit = 1)
+
+    emb = discord.Embed( title = 'Донат', description = 'Заплатите 55 руб., либо потратьте золото в благо клана, чтобы открыть роль V.I.P и использовать секретные комманды!',colour = discord.Color.purple(),url = None )
+
+    emb.add_field( name ='-------', value = 'Перейдите по ссылке: https://www.donationalerts.com/r/rayyyyyy' )
+
+    await ctx.send(embed = emb)
 
 token = os.environ.get('TOKEN')
 
