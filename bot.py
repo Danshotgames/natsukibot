@@ -12,20 +12,29 @@ client = commands.Bot( command_prefix = '//' )
 
 amounts = {}
 
-
-   @client.event
+@client.event
 async def on_ready():
+    client.loop.create_task(rainbowrole(rainbowrolename))
+    client.loop.create_task(rainbowrole2(rainbowrolename))
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('Ready.')
+    print('------------')
+    print( 'bot connected' )
+    await client.change_presence( status = discord.Status.online, activity = discord.Game(' //info'))
     global amounts
     global work
-    try:
-        with open('amounts.json') as f:
-            amounts = json.load(f)
-        with open('work.json') as f:
-            work = json.load(f)
-    except FileNotFoundError:
-        print("Could not load amounts.json")
-        amounts = {}
-        work = {}
+try:
+    with open('amounts.json') as f:
+        amounts = json.load(f)
+    with open('work.json') as f:
+        work = json.load(f)
+except FileNotFoundError:
+    print("Could not load amounts.json")
+    amounts = {}
+    work = {}
+
 
 @client.command(pass_context=True)
 async def balance(ctx):
@@ -164,14 +173,14 @@ async def save():
 async def save_work():
     _save()
 
-	
+
 #Variables
 
 serverid = 625001454666776586
 rainbowrolename = "АДМИН"
 delay = 1
 link = 'https://youtu.be/81MglUZp5-I'
-serverid2 = 698863640727519232
+serverid2 = 698843967403327530
 
 
 #Messages
@@ -220,20 +229,7 @@ async def rainbowrole(role):
         await asyncio.sleep(10)
         client.loop.create_task(rainbowrole(rainbowrolename))
 
-@client.event
-async def on_ready():
-    client.loop.create_task(rainbowrole(rainbowrolename))
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('Ready.')
-    print('------------')
-    print( 'bot connected' )
-    await client.change_presence( status = discord.Status.online, activity = discord.Game(' //info'))
-
-colours = [discord.Color.dark_orange(),discord.Color.orange(),discord.Color.dark_gold(),discord.Color.gold(),discord.Color.dark_magenta(),discord.Color.magenta(),discord.Color.red(),discord.Color.dark_red(),discord.Color.blue(),discord.Color.dark_blue(),discord.Color.teal(),discord.Color.dark_teal(),discord.Color.green(),discord.Color.dark_green(),discord.Color.purple(),discord.Color.dark_purple()]
-
-async def rainbowrole(role):
+async def rainbowrole2(role):
     for role in client.get_guild(serverid2).roles:
         if str(role) == str(rainbowrolename):
             print("detected role")
@@ -250,13 +246,14 @@ async def rainbowrole(role):
         await client.get_guild(serverid2).create_role(reason="Created rainbow role", name=rainbowrolename)
         print("role created!")
         await asyncio.sleep(2)
-        client.loop.create_task(rainbowrole(rainbowrolename))
+        client.loop.create_task(rainbowrole2(rainbowrolename))
     except Exception as e:
         print("couldn't create the role. Make sure the bot have the perms to edit roles")
         print(e)
         pass
         await asyncio.sleep(10)
-        client.loop.create_task(rainbowrole(rainbowrolename))
+        client.loop.create_task(rainbowrole2(rainbowrolename))
+
 
 #Mute
 
