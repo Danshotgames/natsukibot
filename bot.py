@@ -305,6 +305,26 @@ async def unmute(ctx, member: discord.Member):
 
     await ctx.send(embed = emb)
     await member.remove_roles(drole)
+
+#offkick
+
+@client.command( pass_context = True )
+@commands.has_permissions( kick_members = True )
+
+async def warn_off( ctx, member: discord.Member):
+    await ctx.channel.purge (limit = 1)
+    
+    await member.send(f'{member.mention}, Предупреждение! Вы не были онлайн 3 дня! 3 таких предупреждения - автоматический кик!')
+
+@client.command( pass_context = True )
+@commands.has_permissions( kick_members = True )
+
+async def warn_kick( ctx, member: discord.Member, reason):
+    await ctx.channel.purge (limit = 1)
+    
+    await member.send(f'{member.mention}, Вы были выгнаны из сервера по причине большого не актива!')
+    await member.kick( reason = reason )
+
 #Join
 @client.command()
 @client.event
@@ -360,6 +380,10 @@ async def info( ctx ):
     emb.add_field( name ='//mute', value = 'Ограничить чат участника')
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
     emb.add_field( name ='//time', value = 'Посмотреть текущее время')
+    emb.add_field( name ='//register', value = 'Зарегистрировать счет в банке')
+    emb.add_field( name ='//balance', value = 'Посмотреть свой баланс')
+    emb.add_field( name ='//transfer', value = 'Перекинуть деньги')
+    emb.add_field( name ='@Natsuki_bot', value = 'by @Rayyy, ver 1.7')
     await ctx.send(embed = emb)
     
 #Kick
@@ -415,7 +439,6 @@ async def test( ctx ):
     #emb.set_thumbnail( url = '' )
 
     await ctx.send(embed = emb)
-
 
 #Connect
 
