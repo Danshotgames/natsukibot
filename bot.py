@@ -452,6 +452,70 @@ async def donate( ctx ):
 
     await ctx.send(embed = emb)
 
+@client.command(pass_context=True)
+@commands.has_role("V.I.P")
+async def flash (ctx, member: discord.Member):
+    await ctx.channel.purge(limit=1)
+
+    frole = discord.utils.get(ctx.message.guild.roles, name='Flashed')
+
+    emb = discord.Embed( title = 'ВНИМАНИЕ!',colour = discord.Color.purple(),url = None )
+
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    
+    emb.add_field( name ='----------------', value = '{} был ослеплен!'.format(member.mention) )
+
+    await ctx.send(embed = emb)
+    await member.add_roles( frole )
+    #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
+    #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
+    #emb.set_thumbnail( url = '' )
+
+    await ctx.send(embed = emb)
+            #await client.change_nickname()
+
+
+@client.command()
+@commands.has_role("V.I.P")
+@client.event
+
+async def vip_member(ctx, member: discord.Member):
+    await ctx.channel.purge(limit=1) 
+    #actor = ctx.message.member
+    #await ctx.change_nickname(actor, f'V.I.P {actor}')
+
+    vip_role = discord.utils.get(ctx.message.guild.roles, name = 'V.I.P')
+    
+    #await ctx.send(f"{} снял ограничения чата у{member.mention}")
+    emb = discord.Embed( title = 'Поздаравляем!',colour = discord.Color.purple(),url = None )
+
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    
+    emb.add_field( name ='----------------', value = '{} стал V.I.P персоной!'.format(member.mention) )
+    
+
+    await ctx.send(embed = emb)
+    await member.add_roles(vip_role)
+
+
+@client.command()
+@commands.has_role("V.I.P")
+
+async def unflash(ctx, member: discord.Member):
+    await ctx.channel.purge(limit=1) 
+
+    frole = discord.utils.get(ctx.message.guild.roles, name = 'Flashed')
+    
+    #await ctx.send(f"{} снял ограничения чата у{member.mention}")
+    emb = discord.Embed( title = 'ВНИМАНИЕ!',colour = discord.Color.purple(),url = None )
+
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    
+    emb.add_field( name ='----------------', value = '{} теперь все видит!'.format(member.mention) )
+
+    await ctx.send(embed = emb)
+    await member.remove_roles(frole)
+
 token = os.environ.get('TOKEN')
 
 client.run(str(token))
