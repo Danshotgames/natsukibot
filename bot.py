@@ -10,9 +10,40 @@ client = discord.Client()
 
 client = commands.Bot( command_prefix = '//' )
 
+client.remove_command('help')
+
 #Variables
 
 gift_1 = True
+gift_2 = True
+gift_3 = True
+gift_4 = True
+gift_5 = True
+gift_6 = True
+gift_7 = True
+gift_8 = True
+gift_9 = True
+gift_10 = True
+gift_11 = True
+gift_12 = True
+gift_13 = True
+gift_14 = True
+gift_15 = True
+gift_16 = True
+gift_17 = True
+gift_18 = True
+gift_19 = True
+gift_20 = True
+gift_21 = True
+gift_22 = True
+gift_23 = True
+gift_24 = True
+gift_25 = True
+gift_26 = True
+gift_27 = True
+gift_28 = True
+gift_29 = True
+gift_30 = True
 
 #Messages
 
@@ -35,12 +66,12 @@ gift_1 = True
 
 @client.command()
 
-async def gift_1567 (ctx, member:discord.Member):
+async def gift_1897 (ctx, member:discord.Member):
     global gift_1
 
     if gift_1:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='💩')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -53,7 +84,626 @@ async def gift_1567 (ctx, member:discord.Member):
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Код уже использован!')
         await ctx.send(embed = emb)
-    
+
+@client.command()
+async def gift_2315 (ctx, member:discord.Member):
+    global gift_2
+
+    if gift_2:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_2 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3412 (ctx, member:discord.Member):
+    global gift_3
+
+    if gift_3:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_3 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_6753 (ctx, member:discord.Member):
+    global gift_4
+
+    if gift_4:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_4 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2345 (ctx, member:discord.Member):
+    global gift_5
+
+    if gift_5:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_5 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2341 (ctx, member:discord.Member):
+    global gift_6
+
+    if gift_6:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='⭐')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_6 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_7857 (ctx, member:discord.Member):
+    global gift_7
+
+    if gift_7:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='⭐')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_7 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2432 (ctx, member:discord.Member):
+    global gift_8
+
+    if gift_8:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='⭐')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_8 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_9578 (ctx, member:discord.Member):
+    global gift_9
+
+    if gift_9:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='⭐')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_9 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_9869 (ctx, member:discord.Member):
+    global gift_10
+
+    if gift_10:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='⭐')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_10 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2344 (ctx, member:discord.Member):
+    global gift_11
+
+    if gift_11:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🔥')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_11 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3452 (ctx, member:discord.Member):
+    global gift_12
+
+    if gift_12:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🔥')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_12 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_1321 (ctx, member:discord.Member):
+    global gift_13
+
+    if gift_13:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🔥')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_13 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3424 (ctx, member:discord.Member):
+    global gift_14
+
+    if gift_14:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🔥')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_14 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_1233 (ctx, member:discord.Member):
+    global gift_15
+
+    if gift_15:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🔥')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_15 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_6788 (ctx, member:discord.Member):
+    global gift_16
+
+    if gift_16:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💀')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_16 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_4764 (ctx, member:discord.Member):
+    global gift_17
+
+    if gift_17:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💀')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_17 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_9809 (ctx, member:discord.Member):
+    global gift_18
+
+    if gift_18:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💀')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_18 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_5678 (ctx, member:discord.Member):
+    global gift_19
+
+    if gift_19:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💀')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_19 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_1214 (ctx, member:discord.Member):
+    global gift_20
+
+    if gift_20:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='👑')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_20 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2353 (ctx, member:discord.Member):
+    global gift_21
+
+    if gift_21:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='👑')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_21 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3463 (ctx, member:discord.Member):
+    global gift_22
+
+    if gift_22:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='👑')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_22 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_1231 (ctx, member:discord.Member):
+    global gift_23
+
+    if gift_23:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='👑')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_23 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_7698 (ctx, member:discord.Member):
+    global gift_24
+
+    if gift_24:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='👑')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_24 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3453 (ctx, member:discord.Member):
+    global gift_25
+
+    if gift_25:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❤️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_25 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_4574 (ctx, member:discord.Member):
+    global gift_26
+
+    if gift_26:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❤️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_26 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_8796 (ctx, member:discord.Member):
+    global gift_27
+
+    if gift_27:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='❤️')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_27 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_4576 (ctx, member:discord.Member):
+    global gift_28
+
+    if gift_28:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🐲')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_28 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2467 (ctx, member:discord.Member):
+    global gift_29
+
+    if gift_29:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🐲')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_29 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_2452 (ctx, member:discord.Member):
+    global gift_30
+
+    if gift_30:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🐲')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_30 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_3947 (ctx, member:discord.Member):
+    global gift_31
+
+    if gift_31:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💎')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_31 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
+
+@client.command()
+async def gift_1241 (ctx, member:discord.Member):
+    global gift_32
+
+    if gift_32:
+        await ctx.channel.purge(limit=1)
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💎')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(pup_role)
+        gift_32 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
 
 #Mute
 
@@ -134,12 +784,12 @@ async def clear( ctx, amount = 1000 ):
     
 @client.command( pass_context = True )
 
-async def info( ctx ):
+async def help( ctx ):
     await ctx.channel.purge (limit = 1)
 
     emb = discord.Embed( title = 'ИНФОРМАЦИЯ', description = 'ГИД по коммандам:',colour = discord.Color.purple(),url = None )
 
-    emb.add_field( name ='//info', value = 'Инструкция по коммандам' )
+    emb.add_field( name ='//help', value = 'Инструкция по коммандам' )
     emb.add_field( name ='//clear', value = 'Очистка чата')
     emb.add_field( name ='//kick', value = 'Выгнать участника')
     emb.add_field( name ='//ban', value = 'Заблокировать участника')
