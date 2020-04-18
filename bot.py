@@ -44,6 +44,8 @@ gift_27 = True
 gift_28 = True
 gift_29 = True
 gift_30 = True
+gift_31 = True
+gift_32 = True
 
 #Messages
 
