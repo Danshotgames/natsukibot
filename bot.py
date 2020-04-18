@@ -12,7 +12,7 @@ client = commands.Bot( command_prefix = '//' )
 
 #Variables
 
-gift_1 = 0
+gift_1 = True
 
 #Messages
 
@@ -35,16 +35,24 @@ gift_1 = 0
 
 @client.command()
 
-async def gift_1567234599 (ctx, member:discord.Member):
-    if gift_1 = 0:
+async def gift_1567 (ctx, member:discord.Member):
+    global gift_1
+
+    if gift_1:
         await ctx.channel.purge(limit=1)
-        diamond_role = discord.utils.get(ctx.message.guild.roles, name='Muted')
-        emb = discord.Embed(title = 'ПОДАРОК', colour = discord.Color.gold(), url = ctx.author.avatar_url)
-        emb.set_author(name = ctx.author.name, icon_url = None)
-        emb.add_field(name ='ПОЗДРАВЛЯЕМ!', value = 'Вы получили подарок!')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='💩')
+        emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Вы получили подарок!')
         await ctx.send(embed = emb)
-        await member.add_roles(diamond_role)
-        #gift_1 += 1
+        await member.add_roles(pup_role)
+        gift_1 = False
+    else:
+        await ctx.channel.purge(limit=1)
+        emb = discord.Embed(title = 'ОШИБКА!', colour = discord.Color.red(), url = None)
+        emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
+        emb.add_field(name ='------------', value = 'Код уже использован!')
+        await ctx.send(embed = emb)
     
 
 #Mute
@@ -139,6 +147,7 @@ async def info( ctx ):
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
     emb.add_field( name ='//time', value = 'Посмотреть текущее время')
     emb.add_field( name ='//donate', value = 'Помочь клану')
+    emb.add_field( name ='//gift_(код подарка)', value = 'Получить подарок')
     emb.add_field( name ='@Natsuki_bot', value = 'by @_Rayyy, ver 1.9')
     await ctx.send(embed = emb)
     
@@ -246,7 +255,7 @@ async def unflash(ctx, member: discord.Member):
 
     await ctx.send(embed = emb)
     await member.remove_roles(frole)
-
+    
 token = os.environ.get('TOKEN')
 
 client.run(str(token))
