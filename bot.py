@@ -44,7 +44,7 @@ async def gift_1567234599 (ctx, member:discord.Member):
         emb.add_field(name ='ПОЗДРАВЛЯЕМ!', value = 'Вы получили подарок!')
         await ctx.send(embed = emb)
         await member.add_roles(diamond_role)
-        gift_1 += 1
+        #gift_1 += 1
     
 
 #Mute
