@@ -12,6 +12,8 @@ client = commands.Bot( command_prefix = '//' )
 
 #Variables
 
+gift_1 = 0
+
 #Messages
 
 #Filter
@@ -28,6 +30,22 @@ client = commands.Bot( command_prefix = '//' )
         #await message.author.send(f'{message.author.name}, нельзя такое писать в этом чате!')
 
 #Commands
+
+#Gifts
+
+@client.command()
+
+async def gift_1567234599 (ctx, member:discord.Member):
+    if gift_1 = 0:
+        await ctx.channel.purge(limit=1)
+        diamond_role = discord.utils.get(ctx.message.guild.roles, name='Muted')
+        emb = discord.Embed(title = 'ПОДАРОК', colour = discord.Color.gold(), url = ctx.author.avatar_url)
+        emb.set_author(name = ctx.author.name, icon_url = None)
+        emb.add_field(name ='ПОЗДРАВЛЯЕМ!', value = 'Вы получили подарок!')
+        await ctx.send(embed = emb)
+        await member.add_roles(diamond_role)
+        gift_1 += 1
+    
 
 #Mute
 
