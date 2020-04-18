@@ -65,7 +65,6 @@ gift_32 = True
 #Commands
 
 #Gifts
-
 @client.command()
 
 async def gift_1897 (ctx, member:discord.Member):
@@ -73,7 +72,7 @@ async def gift_1897 (ctx, member:discord.Member):
 
     if gift_1:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🌪️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -93,7 +92,7 @@ async def gift_2315 (ctx, member:discord.Member):
 
     if gift_2:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🌪️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -113,7 +112,7 @@ async def gift_3412 (ctx, member:discord.Member):
 
     if gift_3:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🌪️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -133,7 +132,7 @@ async def gift_6753 (ctx, member:discord.Member):
 
     if gift_4:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🌪️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -153,7 +152,7 @@ async def gift_2345 (ctx, member:discord.Member):
 
     if gift_5:
         await ctx.channel.purge(limit=1)
-        pup_role = discord.utils.get(ctx.message.guild.roles, name='❄️')
+        pup_role = discord.utils.get(ctx.message.guild.roles, name='🌪️')
         emb = discord.Embed(title = 'ПОЗДРАВЛЯЕМ!', colour = discord.Color.gold(), url = None)
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Вы получили подарок!')
@@ -166,6 +165,7 @@ async def gift_2345 (ctx, member:discord.Member):
         emb.set_author(name = ctx.author.name, icon_url = ctx.author.avatar_url)
         emb.add_field(name ='------------', value = 'Код уже использован!')
         await ctx.send(embed = emb)
+
 
 @client.command()
 async def gift_2341 (ctx, member:discord.Member):
