@@ -52,6 +52,12 @@ async def mute (ctx, member: discord.Member):
 
 #Time
 
+@client.event
+async def on_ready():
+    activity = discord.Game(name="Standoff 2 | AFF", type=3)
+    await client.change_presence(status=discord.Status.online, activity=activity)
+    print("Bot is ready!")
+
 @client.command(pass_context = True)
 #@tasks.loop(seconds=60)
 async def time(ctx):
@@ -88,12 +94,14 @@ async def unmute(ctx, member: discord.Member):
 
 async def on_member_join( member ):
     channel = client.get_channel( 698183270466060349 )
-    await member.send(f'Поздравляем {member.mention}! теперь Вы часть нашего клана! Добро пожаловать на сервер! ')
+    await member.send(f'Поздравляем {member.mention}! теперь Вы часть нашего клана AFFERs! Добро пожаловать на сервер! Введите //help для помощи')
     role = discord.utils.get( member.guild.roles, id = 698157175561912543 )
+    role2 = discord.utils.get( member.guild.roles, id = 690258154512318525 )
 
     await member.add_roles( role )
+    await member.add_roles( role2 )
     #emb = discord.Embed( title = 'НОВЫЙ УЧАСТНИК!',colour = discord.Color.purple(),url = None )
-    await channel.send( embed = discord.Embed( description = f'Пользователь { member.mention }, присоединился к нам! Добро пожаловать!', colour = discord.Color.purple() ) )
+    await channel.send( embed = discord.Embed( description = f'Пользователь { member.mention } присоединился к нам! Добро пожаловать!', colour = discord.Color.purple() ) )
 
 #Clear
     
@@ -103,7 +111,8 @@ async def on_member_join( member ):
 async def clear( ctx, amount = 1000 ):
     await ctx.channel.purge(limit = amount+1)
 
-    emb = discord.Embed( title = 'УДАЛЕНИЕ', description = f'Удалено: {amount} сообщений',colour = discord.Color.purple(),url = None )
+    emb = discord.Embed( title = 'ОЧИСТКА', description = f'Очищено: {amount} сообщений',colour = discord.Color.purple(),url = None )
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
     await ctx.send(embed = emb)
     
 #Help
@@ -123,8 +132,10 @@ async def help( ctx ):
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
     emb.add_field( name ='//time', value = 'Посмотреть текущее время')
     emb.add_field( name ='//donate', value = 'Помочь клану')
+    emb.add_field( name ='//flash', value = 'Ограничить доступ к каналу')
+    emb.add_field( name ='//unflash', value = 'Убрать ограничения доступа к каналу')
     emb.add_field( name ='//gift_(код подарка)', value = 'Получить подарок')
-    emb.add_field( name ='@Natsuki_bot', value = 'by @_Rayyy, ver 1.9')
+    emb.add_field( name ='UMBRELLA-BOT', value = 'by _Rayyy, ver 2.0')
     await ctx.send(embed = emb)
     
 #Kick
@@ -215,7 +226,7 @@ async def donate( ctx ):
     emb.add_field( name ='-------', value = 'Перейдите по ссылке: https://www.donationalerts.com/r/rayyyyyy' )
 
     await ctx.send(embed = emb)
-    
+
 
 @client.command(pass_context=True)
 @commands.has_role("👑 VIP 👑")
@@ -223,21 +234,14 @@ async def flash (ctx, member: discord.Member):
     await ctx.channel.purge(limit=1)
 
     frole = discord.utils.get(ctx.message.guild.roles, name='Flashed')
-
     emb = discord.Embed( title = 'ВНИМАНИЕ!',colour = discord.Color.gold(),url = None )
-
     emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
-    
     emb.add_field( name ='----------------', value = '{} был ослеплен!'.format(member.mention) )
-
     await ctx.send(embed = emb)
     await member.add_roles( frole )
     #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
-    #emb.set_thumbnail( url = '' )
-
-    await ctx.send(embed = emb)
-            #await client.change_nickname()
+    #emb.set_thumbnail( url = '' )s
 
 @client.command()
 @commands.has_role("👑 VIP 👑")
@@ -253,9 +257,8 @@ async def unflash(ctx, member: discord.Member):
     emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
     
     emb.add_field( name ='----------------', value = '{} теперь все видит!'.format(member.mention) )
-
-    await ctx.send(embed = emb)
     await member.remove_roles(frole)
+    await ctx.send(embed = emb)
     
 token = os.environ.get('TOKEN')
 
