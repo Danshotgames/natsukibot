@@ -215,6 +215,7 @@ async def donate( ctx ):
     emb.add_field( name ='-------', value = 'Перейдите по ссылке: https://www.donationalerts.com/r/rayyyyyy' )
 
     await ctx.send(embed = emb)
+    
 
 @client.command(pass_context=True)
 @commands.has_role("👑 VIP 👑")
@@ -223,7 +224,7 @@ async def flash (ctx, member: discord.Member):
 
     frole = discord.utils.get(ctx.message.guild.roles, name='Flashed')
 
-    emb = discord.Embed( title = 'ВНИМАНИЕ!',colour = discord.Color.purple(),url = None )
+    emb = discord.Embed( title = 'ВНИМАНИЕ!',colour = discord.Color.gold(),url = None )
 
     emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
     
