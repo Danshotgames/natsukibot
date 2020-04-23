@@ -185,7 +185,7 @@ async def secret( ctx ):
 @commands.has_permissions( kick_members = True )
 
 async def yoba( ctx ):
-    emb = discord.Embed( title = 'Ебать секретно!!', description = 'бля',colour = discord.Color.red(),url = None )
+    emb = discord.Embed( title = 'Секрет!!', description = 'Я вас наебал, никокого секрета нету гыг',colour = discord.Color.red(),url = None )
 
     #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
@@ -197,7 +197,7 @@ async def yoba( ctx ):
 @commands.has_permissions( ban_members = True )
 
 async def test( ctx ):
-    emb = discord.Embed( title = 'Тестовая хуйня', description = 'КАКАЯ-ТО ПОЕБОТА ОТ АДМИНА',colour = discord.Color.purple(),url = None )
+    emb = discord.Embed( title = 'Ебать, тест нахуй!', description = 'Ну так то тут должен быть текст, но его как бы нету...',colour = discord.Color.purple(),url = None )
 
     #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
@@ -217,7 +217,7 @@ async def donate( ctx ):
     await ctx.send(embed = emb)
 
 @client.command(pass_context=True)
-@commands.has_role("V.I.P")
+@commands.has_role("👑 VIP 👑")
 async def flash (ctx, member: discord.Member):
     await ctx.channel.purge(limit=1)
 
