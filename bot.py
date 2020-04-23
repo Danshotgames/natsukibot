@@ -132,10 +132,11 @@ async def help( ctx ):
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
     emb.add_field( name ='//time', value = 'Посмотреть текущее время')
     emb.add_field( name ='//donate', value = 'Помочь клану')
-    emb.add_field( name ='//flash', value = 'Ограничить доступ к каналу')
-    emb.add_field( name ='//unflash', value = 'Убрать ограничения доступа к каналу')
-    emb.add_field( name ='//gift_(код подарка)', value = 'Получить подарок')
-    emb.add_field( name ='UMBRELLA-BOT', value = 'by _Rayyy, ver 2.0')
+    emb.add_field( name ='//flash(VIP)', value = 'Ограничить доступ к каналу')
+    emb.add_field( name ='//unflash(VIP)', value = 'Убрать ограничения доступа к каналу')
+    emb.add_field( name ='//vanish(VIP)', value = 'Скрыть участника')
+    emb.add_field( name ='//unvanish(VIP)', value = 'Раскрыть участника')
+    emb.add_field( name ='NATSUKI-BOT', value = 'Owner: _Rayyy, ver 2.0')
     await ctx.send(embed = emb)
     
 #Kick
@@ -243,6 +244,37 @@ async def flash (ctx, member: discord.Member):
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
     #emb.set_thumbnail( url = '' )s
 
+@client.command(pass_context=True)
+@commands.has_role("👑 VIP 👑")
+async def vanish (ctx, member: discord.Member):
+    await ctx.channel.purge(limit=1)
+
+    vrole = discord.utils.get(ctx.message.guild.roles, name='Vanished')
+    emb = discord.Embed( title = 'СКРЫТИЕ',colour = discord.Color.gold(),url = None )
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    emb.add_field( name ='----------------', value = '{} стал невидим!'.format(member.mention) )
+    await ctx.send(embed = emb)
+    await member.add_roles( vrole )
+    #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
+    #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
+    #emb.set_thumbnail( url = '' )s
+
+@client.command(pass_context=True)
+@commands.has_role("👑 VIP 👑")
+async def unvanish (ctx, member: discord.Member):
+    await ctx.channel.purge(limit=1)
+
+    vrole = discord.utils.get(ctx.message.guild.roles, name='Vanished')
+    emb = discord.Embed( title = 'РАСКРЫТИЕ',colour = discord.Color.gold(),url = None )
+    emb.set_author( name = ctx.author.name, icon_url = ctx.author.avatar_url )
+    emb.add_field( name ='----------------', value = '{} стал видим!'.format(member.mention) )
+    await ctx.send(embed = emb)
+    await member.remove_roles( vrole )
+    #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
+    #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
+    #emb.set_thumbnail( url = '' )s
+
+
 @client.command()
 @commands.has_role("👑 VIP 👑")
 
@@ -259,6 +291,7 @@ async def unflash(ctx, member: discord.Member):
     emb.add_field( name ='----------------', value = '{} теперь все видит!'.format(member.mention) )
     await member.remove_roles(frole)
     await ctx.send(embed = emb)
+    
     
 token = os.environ.get('TOKEN')
 
