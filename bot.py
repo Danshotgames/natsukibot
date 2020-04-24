@@ -67,7 +67,14 @@ async def mute (ctx, member: discord.Member):
 
 @client.command()
 async def emoji(ctx, arg):
-    await ctx.channel.purge(limit=1)
+    await ctx.message.delete()
+    guild = ctx.guild
+    em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
+    await ctx.send(f'{em}')
+
+@client.command()
+async def e(ctx, arg):
+    await ctx.message.delete()
     guild = ctx.guild
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
     await ctx.send(f'{em}')
