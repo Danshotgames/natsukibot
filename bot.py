@@ -132,7 +132,7 @@ async def emj(ctx, arg):
 
 @client.command()
 @commands.has_role("👑 VIP 👑")
-async def t_emj(ctx, arg, *, txt):
+async def temj(ctx, arg, *, txt):
     await ctx.message.delete()
     guild = ctx.guild
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
