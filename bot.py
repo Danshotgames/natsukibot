@@ -76,13 +76,10 @@ async def emoji(ctx, arg):
     await ctx.send(f'{em}')
 
 @client.command()
-async def e(ctx, arg):
+async def emj(ctx, arg):
     await ctx.message.delete()
     guild = ctx.guild
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
-    await ctx.send(f'{em}')
-
-
     w = await ctx.channel.create_webhook(name=ctx.author.name)
     await w.send(f'{em}', avatar_url=ctx.author.avatar_url)
         
@@ -189,6 +186,7 @@ async def help( ctx ):
     emb.add_field( name ='//unflash(VIP)', value = 'Убрать ограничения доступа к каналу')
     emb.add_field( name ='//vanish(VIP)', value = 'Скрыть участника')
     emb.add_field( name ='//unvanish(VIP)', value = 'Раскрыть участника')
+    emb.add_field( name ='//emj(VIP)', value = 'Отправить gif-emoji от своего имени')
     emb.add_field( name ='NATSUKI-BOT', value = 'Owner: _Rayyy, ver 2.0')
     await ctx.send(embed = emb)
 
