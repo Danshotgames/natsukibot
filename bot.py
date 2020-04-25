@@ -76,6 +76,7 @@ async def emoji(ctx, arg):
     await ctx.send(f'{em}')
 
 @client.command()
+@commands.has_role("👑 VIP 👑")
 async def emj(ctx, arg):
     await ctx.message.delete()
     guild = ctx.guild
