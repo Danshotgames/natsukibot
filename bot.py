@@ -78,6 +78,11 @@ async def e(ctx, arg):
     guild = ctx.guild
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
     await ctx.send(f'{em}')
+    w = await ctx.channel.create_webhook(name=ctx.author.name)
+    await w.send(msg, avatar_url=ctx.author.avatar_url)
+        
+    await w.delete()
+
 
 @emoji.error
 async def emoji_error( ctx, error ):
