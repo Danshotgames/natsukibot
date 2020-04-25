@@ -6,7 +6,7 @@ import os
 import datetime
 import json	
 from discord import Webhook, RequestsWebhookAdapter
-
+from random import randint
 
 
 client = discord.Client()
@@ -35,7 +35,51 @@ sex_v = False
         #await message.delete()
         #await message.author.send(f'{message.author.name}, нельзя такое писать в этом чате!')
 
+
+
 #Commands
+
+@client.command()
+async def botinfo(ctx):
+
+    embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **Natsuki**.\n Бот был написан специально для клана AFFERs,\n подробнее о командах - //help", colour = discord.Color.purple())
+    embed.add_field(name=f'**Создатель:**', value="_Rayyy", inline=True)  # Создает строку
+    embed.add_field(name=f'**Помощь в создании:**', value="_Rayyy", inline=True)  # Создает строку
+    embed.add_field(name=f'**Лицензия:**', value="Sv-1G-WD-Ui", inline=True)  # Создает строку
+    embed.add_field(name=f'**Написан на:**', value="Discord.py", inline=True)  # Создает строку
+    embed.add_field(name=f'**Версия:**', value="2.0", inline=True)  # Создает строку
+    embed.add_field(name=f'**Патч:**', value="3.8.2", inline=True)  # Создает строку
+    embed.set_thumbnail( url = "https://images-ext-2.discordapp.net/external/F-OHTcCXkzVPRbLkFChv-PbqYyC8RYx2L19dXQITEDQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/696677196349177906/18e4922dde1f1cbdd89a8044696415fc.webp?width=475&height=475")
+    embed.set_footer(text=f"© Copyright 2020 _Rayyy#6698 | Все права защищены")  # создаение футера
+    await ctx.send(embed=embed)
+
+@client.event
+async def on_message(message):
+    await client.process_commands(message) # Штука чтобы работали другие команды (ОСТОРОЖНО ЛОМАЕТ КОГИ(COGS)! В КОГАХ ОН НЕ НУЖЕН)
+    if not message.guild: # Проверка что это ЛС
+        chanel = client.get_channel( 698178283942182922 ) # Айди канала куда бот отправит сообщение
+
+        embed = discord.Embed( description = f'{message.content}', colour = discord.Color.purple()) 
+        embed.set_author(name=message.author, icon_url=message.author.avatar_url)
+        embed.set_image(url=message.attachments[0].url)
+
+        message = await chanel.send(embed = embed)
+        await message.add_reaction('❤️')
+
+@client.command()
+async def game(ctx, move: str = None):
+    solutions = ["`ножницы`", "`камень`", "`бумага`"]
+    winner = "**НИЧЬЯ**"
+    p1 = solutions.index(f"`{move.lower()}`")
+    p2 = randint(0, 2)
+    if p1 == 0 and p2 == 1 or p1 == 1 and p2 == 2 or p1 == 2 and p2 == 0:
+        winner = f"{ctx.message.author.mention} ты **Проиграл**"
+    elif p1 == 1 and p2 == 0 or p1 == 2 and p2 == 1 or p1 == 0 and p2 == 2:
+        winner = f"{ctx.message.author.mention} ты **Выиграл**"
+    await ctx.send(    
+        f"{ctx.message.author.mention} **=>** {solutions[p1]}\n"
+        f"{client.user.mention} **=>** {solutions[p2]}\n"
+        f"{winner}")
 
 @client.command()
 async def kill(  ctx, member: discord.Member ):
@@ -96,9 +140,14 @@ async def emoji_error( ctx, error ):
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="Standoff 2 | AFF", type=3)
-    await client.change_presence(status=discord.Status.online, activity=activity)
     print("Bot is ready!")
+    while True:
+        await client.change_presence(status = discord.Status.online, activity = discord.Game('Standoff 2 | AFF'))
+        await asyncio.sleep(5)
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером"))
+        await asyncio.sleep(5)
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Эминема"))
+        await asyncio.sleep(5)
 
 @client.command(pass_context = True)
 #@tasks.loop(seconds=60)
@@ -173,6 +222,8 @@ async def help( ctx ):
     emb.add_field( name ='//mute', value = 'Ограничить чат участника')
     emb.add_field( name ='//unmute', value = 'Убрать ограничения чата участника')
     emb.add_field( name ='//time', value = 'Посмотреть текущее время')
+    emb.add_field( name ='//botinfo', value = 'Информация о боте')
+    emb.add_field( name ='//game', value = 'Камень, ножницы, бумага..')
     emb.add_field( name ='//serverinfo', value = 'Информация о сервере')
     emb.add_field( name ='//userinfo', value = 'Информация об участнике')
     emb.add_field( name ='//suggest', value = 'Предложить идею')
