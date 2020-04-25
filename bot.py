@@ -156,7 +156,7 @@ async def on_ready():
         await asyncio.sleep(5)
         await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
         await asyncio.sleep(5)
-        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Бузову | AFF "))
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Эминема | AFF "))
         await asyncio.sleep(5)
 
 @client.command(pass_context = True)
