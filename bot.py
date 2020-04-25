@@ -5,6 +5,7 @@ import random
 import os
 import datetime
 import json	
+from discord_webhook import DiscordWebhook
 
 client = discord.Client()
 
@@ -79,7 +80,7 @@ async def e(ctx, arg):
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
     await ctx.send(f'{em}')
     w = await ctx.channel.create_webhook(name=ctx.author.name)
-    await w.send(msg, avatar_url=ctx.author.avatar_url)
+    await w.send(f'{em}', avatar_url=ctx.author.avatar_url)
         
     await w.delete()
 
