@@ -130,6 +130,16 @@ async def emj(ctx, arg):
         
     await w.delete()
 
+@client.command()
+@commands.has_role("👑 VIP 👑")
+async def txtemj(ctx, txt, arg):
+    await ctx.message.delete()
+    guild = ctx.guild
+    em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
+    w = await ctx.channel.create_webhook(name=ctx.author.name)
+    await w.send(f'{txt} {em}', avatar_url=ctx.author.avatar_url)
+        
+    await w.delete()
 
 @emoji.error
 async def emoji_error( ctx, error ):
@@ -144,9 +154,9 @@ async def on_ready():
     while True:
         await client.change_presence(status = discord.Status.online, activity = discord.Game('Standoff 2 | AFF'))
         await asyncio.sleep(5)
-        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером"))
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
         await asyncio.sleep(5)
-        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Эминема"))
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Бузову | AFF "))
         await asyncio.sleep(5)
 
 @client.command(pass_context = True)
