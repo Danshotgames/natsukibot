@@ -128,7 +128,7 @@ async def emj(ctx, arg):
     w = await ctx.channel.create_webhook(name=ctx.author.name)
     await w.send(f'{em}', avatar_url=ctx.author.avatar_url)
         
-    #await w.delete()
+    await w.delete()
 
 
 @emoji.error
