@@ -39,7 +39,7 @@ sex_v = False
 
 #Command
 @client.command()
-async def react(ctx,id:int,reaction:str):
+async def rct(ctx,id:int,reaction:str):
     await ctx.message.delete()
     message = await ctx.message.channel.fetch_message(id)
     await message.add_reaction(reaction)
