@@ -39,6 +39,34 @@ sex_v = False
 
 #Commands
 
+@client.event
+async def on_raw_reaction_add(payload):
+    if payload.message_id == 704262869713158195: # ID Сообщения
+        guild = client.get_guild(payload.guild_id)
+        role = None
+
+        if str(payload.emoji) == '✅': # Emoji для реакций
+            role = guild.get_role(704206253525696533) # ID Ролей для выдачи
+
+        if role:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.add_roles(role)
+
+@client.event
+async def on_raw_reaction_remove(payload):
+    if payload.message_id == 704262869713158195: # ID Сообщения
+        guild = client.get_guild(payload.guild_id)
+        role = None
+
+        if str(payload.emoji) == '✅': # Emoji для реакций
+            role = guild.get_role(704206642291540028) # ID Ролей для выдачи
+        if role:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role)
+
+
 @client.command()
 async def botinfo(ctx):
 
@@ -187,9 +215,11 @@ async def on_member_join( member ):
     await member.send(f'Приветствую тебя, я Natsuki, мой создатель - _Rayyy. Мы поздравляем тебя, {member.mention}! теперь ты часть нашего клана AFFERs! Добро пожаловать! Введи //help для помощи')
     role = discord.utils.get( member.guild.roles, id = 698157175561912543 )
     role2 = discord.utils.get( member.guild.roles, id = 690258154512318525 )
+    role3 = discord.utils.get( member.guild.roles, id = 704206642291540028 )
 
     await member.add_roles( role )
     await member.add_roles( role2 )
+    await member.add_roles( role3 )
     #emb = discord.Embed( title = 'НОВЫЙ УЧАСТНИК!',colour = discord.Color.purple(),url = None )
     await channel.send( embed = discord.Embed( description = f'Пользователь { member.mention } присоединился к нам! Добро пожаловать!', colour = discord.Color.purple() ) )
 
