@@ -37,7 +37,7 @@ sex_v = False
 
 
 
-#Commands
+#Command
 @client.command()
 async def react(ctx,id:int,reaction:str):
     await ctx.message.delete()
