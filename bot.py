@@ -5,7 +5,6 @@ import random
 import os
 import datetime
 import json	
-import config
 from discord import Webhook, RequestsWebhookAdapter
 from random import randint
 
