@@ -54,7 +54,7 @@ async def on_raw_reaction_add(payload):
                 await member.add_roles(role)
 
 @client.event
-async def on_raw_reaction_remove(payload):
+async def on_raw_reaction_add(payload):
     if payload.message_id == 704262869713158195: # ID Сообщения
         guild = client.get_guild(payload.guild_id)
         role = None
