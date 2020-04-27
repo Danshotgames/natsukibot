@@ -121,18 +121,7 @@ async def emoji(ctx, arg):
 
 @client.command()
 @commands.has_role("👑 VIP 👑")
-async def emj(ctx, arg):
-    await ctx.message.delete()
-    guild = ctx.guild
-    em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
-    w = await ctx.channel.create_webhook(name=ctx.author.name)
-    await w.send(f'{em}', avatar_url=ctx.author.avatar_url)
-        
-    await w.delete()
-
-@client.command()
-@commands.has_role("👑 VIP 👑")
-async def temj(ctx, arg, *, txt):
+async def emj(ctx, arg, *, txt = ''):
     await ctx.message.delete()
     guild = ctx.guild
     em = str(discord.utils.get(guild.emojis, name=f'{arg}'))
