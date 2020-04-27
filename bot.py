@@ -5,6 +5,7 @@ import random
 import os
 import datetime
 import json	
+import config
 from discord import Webhook, RequestsWebhookAdapter
 from random import randint
 
@@ -35,6 +36,50 @@ sex_v = False
         #await message.delete()
         #await message.author.send(f'{message.author.name}, нельзя такое писать в этом чате!')
 
+class MyClient(discord.Client):
+	async def on_ready(self):
+		print('Logged on as {0}!'.format(self.user))
+
+	async def on_raw_reaction_add(self, payload):
+		if payload.message_id == config.POST_ID:
+			channel = self.get_channel(payload.channel_id) # получаем объект канала
+			message = await channel.fetch_message(payload.message_id) # получаем объект сообщения
+			member = utils.get(message.guild.members, id=payload.user_id) # получаем объект пользователя который поставил реакцию
+
+			try:
+				emoji = str(payload.emoji) # эмоджик который выбрал юзер
+				role = utils.get(message.guild.roles, id=config.ROLES[emoji]) # объект выбранной роли (если есть)
+			
+				if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+					await member.add_roles(role)
+					print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+				else:
+					await message.remove_reaction(payload.emoji, member)
+					print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+			
+			except KeyError as e:
+				print('[ERROR] KeyError, no role found for ' + emoji)
+			except Exception as e:
+				print(repr(e))
+
+	async def on_raw_reaction_remove(self, payload):
+		channel = self.get_channel(payload.channel_id) # получаем объект канала
+		message = await channel.fetch_message(payload.message_id) # получаем объект сообщения
+		member = utils.get(message.guild.members, id=payload.user_id) # получаем объект пользователя который поставил реакцию
+
+		try:
+			emoji = str(payload.emoji) # эмоджик который выбрал юзер
+			role = utils.get(message.guild.roles, id=config.ROLES[emoji]) # объект выбранной роли (если есть)
+
+			await member.remove_roles(role)
+			print('[SUCCESS] Role {1.name} has been remove for user {0.display_name}'.format(member, role))
+
+		except KeyError as e:
+			print('[ERROR] KeyError, no role found for ' + emoji)
+		except Exception as e:
+			print(repr(e))
+
+client = MyClient()
 
 
 #Command
@@ -44,7 +89,6 @@ async def rct(ctx,id:int,reaction:str):
     message = await ctx.message.channel.fetch_message(id)
     await message.add_reaction(reaction)
 
-
 @client.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 704262869713158195: # ID Сообщения
@@ -53,24 +97,16 @@ async def on_raw_reaction_add(payload):
 
         if str(payload.emoji) == '✅': # Emoji для реакций
             role = guild.get_role(704206253525696533) # ID Ролей для выдачи
+            role2 = guild.get_role(704206642291540028) # ID Ролей для выдачи
+        if role2:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role2)
 
         if role:
             member = guild.get_member(payload.user_id)
             if member:
                 await member.add_roles(role)
-
-@client.event
-async def on_raw_reaction_add(payload):
-    if payload.message_id == 704262869713158195: # ID Сообщения
-        guild = client.get_guild(payload.guild_id)
-        role = None
-
-        if str(payload.emoji) == '✅': # Emoji для реакций
-            role = guild.get_role(704206642291540028) # ID Ролей для выдачи
-        if role:
-            member = guild.get_member(payload.user_id)
-            if member:
-                await member.remove_roles(role)
 
 
 @client.command()
