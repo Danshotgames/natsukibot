@@ -264,11 +264,11 @@ async def on_ready():
     print("Bot is ready!")
     while True:
         await client.change_presence(status = discord.Status.online, activity = discord.Game('Standoff 2 | AFF'))
-        await asyncio.sleep(5)
+        await asyncio.sleep(15)
         await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
-        await asyncio.sleep(5)
-        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Эминема | AFF "))
-        await asyncio.sleep(5)
+        await asyncio.sleep(15)
+        await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
+        await asyncio.sleep(15)
 
 @client.command(pass_context = True)
 #@tasks.loop(seconds=60)
@@ -529,7 +529,7 @@ async def tempmute_error(ctx, error):
 @commands.has_permissions( kick_members = True )
 
 async def secret( ctx ):
-    emb = discord.Embed( title = 'Ебать секретно!!', description = 'ПИЗДЕЦ ТУТ ТАКОЙ СЕКРЕТ ПРОСТО АХУЕТЬ Я КОГДА УЗНАЛ ЧТО ЭТО БЫЛО А Х У Е Л НУ и ЧТОБ ПОСМОТРЕТЬ СЕКРЕТ ВВЕДИ //yoba!',colour = discord.Color.red(),url = None )
+    emb = discord.Embed( title = 'Ебать секретно!!', description = 'это, тебе правда сказать секрет? ну ладно это я только сам вчера узнал, но ты мудак.. да да я сам в ахуе если честно',colour = discord.Color.red(),url = None )
 
     #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
@@ -541,7 +541,7 @@ async def secret( ctx ):
 @commands.has_permissions( kick_members = True )
 
 async def yoba( ctx ):
-    emb = discord.Embed( title = 'Секрет!!', description = 'Я вас наебал, никокого секрета нету гыг',colour = discord.Color.red(),url = None )
+    emb = discord.Embed( title = 'Секрет!!', description = 'иди нахуй команда не работает',colour = discord.Color.red(),url = None )
 
     #emb.set_author( name =  client.user.name, icon_url = client.user.avatar_url )
     #emb.set_footer( text = ctx.author.name, icon_url = ctx.author.avatar_url )
