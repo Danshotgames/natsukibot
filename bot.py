@@ -3,8 +3,8 @@ from discord.ext import commands, tasks
 import asyncio
 import random
 import os
+import config
 import datetime
-import json	
 from discord import Webhook, RequestsWebhookAdapter
 from random import randint
 
@@ -45,6 +45,66 @@ async def rct(ctx,id:int,reaction:str):
 
 @client.event
 async def on_raw_reaction_add(payload):
+    
+    if payload.message_id == 704322752974291004: # ID Сообщения
+        guild = client.get_guild(payload.guild_id)
+        role = None
+        role2 = None
+        role3 = None
+        role4 = None
+        channel = client.get_channel(payload.channel_id)
+        message = await channel.fetch_message(payload.message_id)
+
+        if str(payload.emoji) == '😄': # Emoji для реакций
+            role = guild.get_role(704324146569412679)
+        
+        if str(payload.emoji) == '😐': # Emoji для реакций
+            role2 = guild.get_role(704324310143336468)  
+        
+        if str(payload.emoji) == '😔': # Emoji для реакций
+            role3 = guild.get_role(704324450824486972) 
+        
+        if str(payload.emoji) == '😡': # Emoji для реакций
+            role4 = guild.get_role(704324571188428840) 
+
+        if role2:
+            member = guild.get_member(payload.user_id)
+            if member:
+                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+                    await member.add_roles(role2)
+                    print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+                else:
+                    await message.remove_reaction(payload.emoji, member)
+                    print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+
+        if role:
+            member = guild.get_member(payload.user_id)
+            if member:
+                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+                    await member.add_roles(role)
+                    print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+                else:
+                    await message.remove_reaction(payload.emoji, member)
+                    print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+        if role3:
+            member = guild.get_member(payload.user_id)
+            if member:
+                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+                    await member.add_roles(role3)
+                    print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+                else:
+                    await message.remove_reaction(payload.emoji, member)
+                    print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+        if role4:
+            member = guild.get_member(payload.user_id)
+            if member:
+                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+                    await member.add_roles(role4)
+                    print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+                else:
+                    await message.remove_reaction(payload.emoji, member)
+                    print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+    
     if payload.message_id == 704262869713158195: # ID Сообщения
         guild = client.get_guild(payload.guild_id)
         role = None
@@ -62,6 +122,44 @@ async def on_raw_reaction_add(payload):
             if member:
                 await member.add_roles(role)
 
+@client.event
+async def on_raw_reaction_remove(payload):
+    if payload.message_id == 704322752974291004: # ID Сообщения
+        guild = client.get_guild(payload.guild_id)
+        role = None
+        role2 = None
+        role3 = None
+        role4 = None
+
+        if str(payload.emoji) == '😄': # Emoji для реакций
+            role = guild.get_role(704324146569412679)
+        
+        if str(payload.emoji) == '😐': # Emoji для реакций
+            role2 = guild.get_role(704324310143336468)  
+        
+        if str(payload.emoji) == '😔': # Emoji для реакций
+            role3 = guild.get_role(704324450824486972) 
+        
+        if str(payload.emoji) == '😡': # Emoji для реакций
+            role4 = guild.get_role(704324571188428840) 
+
+        if role2:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role2)
+
+        if role:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role)
+        if role3:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role3)
+        if role4:
+            member = guild.get_member(payload.user_id)
+            if member:
+                await member.remove_roles(role4)
 
 @client.command()
 async def botinfo(ctx):
