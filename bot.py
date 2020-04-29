@@ -245,7 +245,7 @@ async def botinfo(ctx):
     embed.add_field(name=f'**Помощь в создании:**', value="_Rayyy", inline=True)  # Создает строку
     embed.add_field(name=f'**Лицензия:**', value="Sv-1G-WD-Ui", inline=True)  # Создает строку
     embed.add_field(name=f'**Написан на:**', value="Discord.py", inline=True)  # Создает строку
-    embed.add_field(name=f'**Версия:**', value="2.0", inline=True)  # Создает строку
+    embed.add_field(name=f'**Версия:**', value="2.2", inline=True)  # Создает строку
     embed.add_field(name=f'**Патч:**', value="3.8.2", inline=True)  # Создает строку
     embed.set_thumbnail( url = "https://images-ext-2.discordapp.net/external/F-OHTcCXkzVPRbLkFChv-PbqYyC8RYx2L19dXQITEDQ/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/696677196349177906/18e4922dde1f1cbdd89a8044696415fc.webp?width=475&height=475")
     embed.set_footer(text=f"© Copyright 2020 _Rayyy#6698 | Все права защищены")  # создаение футера
@@ -435,12 +435,17 @@ async def help( ctx ):
     emb.add_field( name ='//ball', value = 'Магический шар')
     emb.add_field( name ='//say', value = 'Говорить ботом')
     emb.add_field( name ='//donate', value = 'Помочь клану')
+    emb.add_field( name ='//cwinfo', value = 'Посмотреть информацию о Клановой войне')
+    emb.add_field( name ='//cw_timeset', value = 'Установить время войны')
+    emb.add_field( name ='//cw_memberset', value = 'Установить состав для войны')
+    emb.add_field( name ='//cw_replacementset', value = 'Установить состав замены для войны')
     emb.add_field( name ='//flash(VIP)', value = 'Ограничить доступ к каналу')
     emb.add_field( name ='//unflash(VIP)', value = 'Убрать ограничения доступа к каналу')
     emb.add_field( name ='//vanish(VIP)', value = 'Скрыть участника')
     emb.add_field( name ='//unvanish(VIP)', value = 'Раскрыть участника')
     emb.add_field( name ='//emj(VIP)', value = 'Отправить gif-emoji от своего имени')
-    emb.add_field( name ='NATSUKI-BOT', value = 'Owner: _Rayyy, ver 2.0')
+    emb.add_field( name ='NATSUKI-BOT', value = 'Owner: _Rayyy, ver 2.2')
+    emb.set_thumbnail(url=ctx.guild.icon_url)
     await ctx.send(embed = emb)
 
 
