@@ -38,7 +38,7 @@ sex_v = False
 global animated_name
 animated_name = False
 
-
+@commands.has_permissions( administrator = True )
 @client.command()
 async def animated_server_name_on(ctx):
     animated_name = True
