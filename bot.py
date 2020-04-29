@@ -35,7 +35,30 @@ sex_v = False
         #await message.delete()
         #await message.author.send(f'{message.author.name}, нельзя такое писать в этом чате!')
 
+global animated_name
+animated_name = False
 
+
+@client.command()
+async def animated_server_name_on(ctx):
+    animated_name = True
+
+
+    if animated_name:
+        while True:
+            await ctx.guild.edit(name = "💙 AFFERs™")
+        #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
+            await asyncio.sleep(2)
+            await ctx.guild.edit(name = "💜 AFFERs™")
+        #await client.change_presence(status = discord.Status.online, activity = discord.Game('💜 Standoff 2 | AFF 💜'))
+        #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
+            await asyncio.sleep(2)
+            await ctx.guild.edit(name = "💛 AFFERs™")
+        #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
+        #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
+            await asyncio.sleep(2)
+
+        
 #Command
 @client.command()
 async def rct(ctx,id:int,reaction:str):
@@ -268,7 +291,7 @@ async def on_ready():
         await client.change_presence(status = discord.Status.online, activity = discord.Game('💜 Standoff 2 | AFF 💜'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
         await asyncio.sleep(4)
-        await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
+        await client.change_presence(status = discord.Status.online, activity = discord.Game('💙 Standoff 2 | AFF 💙'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
         await asyncio.sleep(4)
 
