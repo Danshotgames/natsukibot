@@ -33,6 +33,53 @@ client.remove_command('help')
         #await message.delete()
         #await message.author.send(f'{message.author.name}, нельзя такое писать в этом чате!')
 
+global clanwarreplacement
+global clanwartime
+global memberlist
+memberlist = "Состав не выбран"
+clanwartime = "Не установленно"
+clanwarreplacement = "Состав не выбран"
+
+@commands.has_permissions( ban_members = True )
+@client.command()
+async def cw_replacementset(ctx, member1 = 'Не выбран', member2 = 'Не выбран', member3 = 'Не выбран', member4 = 'Не выбран', member5 = 'Не выбран'):
+    
+    await ctx.message.delete()
+    await ctx.send(f"Состав замены установленно на {member1}, {member2}, {member3}, {member4}, {member5}")
+    global clanwarreplacement
+    clanwarreplacement = f"{member1}, {member2}, {member3}, {member4}, {member5}"
+
+
+@commands.has_permissions( ban_members = True )
+@client.command()
+async def cw_timeset(ctx, hour : int, minute : int):
+    
+    await ctx.message.delete()
+    await ctx.send(f"Время клановой войны установленно на {hour} : {minute}")
+    global clanwartime 
+    clanwartime = f"{hour} : {minute}"
+
+@commands.has_permissions( ban_members = True )
+@client.command()
+async def cw_memberset(ctx, member1, member2, member3 = 'Не выбран', member4 = 'Не выбран', member5 = 'Не выбран'):
+    await ctx.message.delete()
+    await ctx.send(f"Состав участников установленно на {member1}, {member2}, {member3}, {member4}, {member5}")
+    global memberlist 
+    memberlist = f"{member1}, {member2}, {member3}, {member4}, {member5}"
+
+@client.command()
+async def cwinfo(ctx):
+    await ctx.message.delete()
+    emb = discord.Embed( title = 'Информация о Клановой войне:', description = None ,colour = discord.Color.purple(),url = None )
+    emb.add_field( name = 'Состав:', value = f"{memberlist}")
+    emb.add_field( name = 'Время: ', value = f"{clanwartime}")
+    emb.add_field( name = 'Замена: ', value = f"{clanwarreplacement}")
+
+    emb.set_thumbnail(url=ctx.guild.icon_url)
+
+
+    await ctx.send(embed = emb)
+        
 global animated_name
 animated_name = False
 
