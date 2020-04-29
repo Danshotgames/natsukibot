@@ -17,8 +17,6 @@ client.remove_command('help')
 
 #Variables
 
-global sex_v 
-sex_v = False
 
 #Messages
 
