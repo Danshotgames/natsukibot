@@ -24,7 +24,7 @@ client.remove_command('help')
 
 #@client.event
 #async def on_message (message):
-    #channel = client.get_channel( 625001455182544937 )
+    #channel = client.get_channel( 625001455182544937 
 
     #await client.process_commands(message)
 
