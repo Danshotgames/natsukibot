@@ -46,25 +46,25 @@ async def animated_server_name_on(ctx):
 
     if animated_name:
         while True:
-            await ctx.guild.edit(name = "AfFERS™")
+            await ctx.guild.edit(name = "AFFERS™")
         #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
             await asyncio.sleep(1)
-            await ctx.guild.edit(name = "AFfERS™")
+            await ctx.guild.edit(name = "Standoff 2")
         #await client.change_presence(status = discord.Status.online, activity = discord.Game('💜 Standoff 2 | AFF 💜'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name="за сервером | AFF "))
             await asyncio.sleep(1)
-            await ctx.guild.edit(name = "AFFeRS™")
+            #await ctx.guild.edit(name = "AFFeRS™")
         #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
-            await asyncio.sleep(1)
-            await ctx.guild.edit(name = "AFFErS™")
+            #await asyncio.sleep(1)
+            #await ctx.guild.edit(name = "AFFErS™")
         #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
-            await asyncio.sleep(1)
-            await ctx.guild.edit(name = "AFFERs™")
+            #await asyncio.sleep(1)
+            #await ctx.guild.edit(name = "AFFERs™")
         #await client.change_presence(status = discord.Status.online, activity = discord.Game('💛 Standoff 2 | AFF 💛'))
         #await client.change_presence(status = discord.Status.online, activity = discord.Activity(type = discord.ActivityType.listening, name = "Я робот долбаеб | AFF "))
-            await asyncio.sleep(1)
+            #await asyncio.sleep(1)
 
         
 #Command
