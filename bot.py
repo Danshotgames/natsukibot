@@ -45,6 +45,7 @@ clanwarreplacement = "Состав не выбран"
 global fuck
 fuck = True
 
+@commands.has_permissions( ban_members = True )
 @client.command()
 async def fuck_on(ctx):
     await ctx.message.delete()
@@ -52,6 +53,7 @@ async def fuck_on(ctx):
     global fuck
     fuck = True
 
+@commands.has_permissions( ban_members = True )
 @client.command()
 async def fuck_off(ctx):
     await ctx.message.delete()
