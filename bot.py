@@ -280,6 +280,7 @@ async def botinfo(ctx):
 
 @client.event
 async def on_message(message):
+    await client.process_commands(message)
     if fuck:
         if msg.author.bot:
             pass
