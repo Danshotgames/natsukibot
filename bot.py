@@ -282,17 +282,17 @@ async def botinfo(ctx):
 async def on_message(message):
     await client.process_commands(message)
     if fuck:
-        if msg.author.bot:
+        if message.author.bot:
             pass
         else:
-            mes = msg.content.lower()
-            author = msg.author
-            server = msg.guild
+            mes = message.content.lower()
+            author = message.author
+            server = message.guild
             print(f"{author.id} сказал: {mes} На сервере: {server.id}")
             mat = open('mat.txt', 'r', encoding='utf-8')
             for line in mat:
                 if mes.find(line[0:-1]) != -1:
-                    if msg.author.bot:
+                    if message.author.bot:
                         pass
                     else:
                         print("Определил что это мат, удаляю...")
