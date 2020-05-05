@@ -7,7 +7,9 @@ import config
 import datetime
 from discord import Webhook, RequestsWebhookAdapter
 from random import randint
-
+import sys
+import traceback
+from discord.ext.commands import Bot
 
 client = discord.Client()
 
@@ -39,6 +41,53 @@ global memberlist
 memberlist = "Состав не выбран"
 clanwartime = "Не установленно"
 clanwarreplacement = "Состав не выбран"
+
+global fuck
+fuck = True
+
+@client.event
+async def on_message(msg):
+    #global fuck
+    if fuck:
+        if msg.author.bot:
+            pass
+        else:
+            mes = msg.content.lower()
+            author = msg.author
+            server = msg.guild
+            print(f"{author.id} сказал: {mes} На сервере: {server.id}")
+            mat = open('mat.txt', 'r', encoding='utf-8')
+            for line in mat:
+                if mes.find(line[0:-1]) != -1:
+                    if msg.author.bot:
+                        pass
+                    else:
+                        print("Определил что это мат, удаляю...")
+                        await msg.delete()
+                        await msg.channel.send(f"{author.mention}, плохо выражаешься!")
+        mat.close()
+
+@client.command()
+async def fuck_on(ctx):
+    await ctx.message.delete()
+    await ctx.send("Режим фильтра мата включен")
+    global fuck
+    fuck = True
+
+@client.command()
+async def fuck_off(ctx):
+    await ctx.message.delete()
+    await ctx.send("Режим фильтра мата отключен")
+    global fuck
+    fuck = False
+
+
+@client.command()
+async def google(ctx, *, question):  # погуглить
+    # сам сайт
+    url = 'https://google.gik-team.com/?q=' + str(question).replace(' ', '+')
+    await ctx.send(f'Так как кое кто не умеет гуглить, я сделал это за него.\n{url}')
+
 
 @commands.has_permissions( ban_members = True )
 @client.command()
