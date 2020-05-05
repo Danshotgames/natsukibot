@@ -296,8 +296,8 @@ async def on_message(message):
                         pass
                     else:
                         print("Определил что это мат, удаляю...")
-                        await msg.delete()
-                        await msg.channel.send(f"{author.mention}, плохо выражаешься!")
+                        await message.delete()
+                        await message.channel.send(f"{author.mention}, плохо выражаешься!")
         mat.close()
 
     #await client.process_commands(message) # Штука чтобы работали другие команды (ОСТОРОЖНО ЛОМАЕТ КОГИ(COGS)! В КОГАХ ОН НЕ НУЖЕН)
