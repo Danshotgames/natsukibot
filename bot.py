@@ -45,28 +45,6 @@ clanwarreplacement = "Состав не выбран"
 global fuck
 fuck = True
 
-@client.event
-async def on_message(msg):
-    #global fuck
-    if fuck:
-        if msg.author.bot:
-            pass
-        else:
-            mes = msg.content.lower()
-            author = msg.author
-            server = msg.guild
-            print(f"{author.id} сказал: {mes} На сервере: {server.id}")
-            mat = open('mat.txt', 'r', encoding='utf-8')
-            for line in mat:
-                if mes.find(line[0:-1]) != -1:
-                    if msg.author.bot:
-                        pass
-                    else:
-                        print("Определил что это мат, удаляю...")
-                        await msg.delete()
-                        await msg.channel.send(f"{author.mention}, плохо выражаешься!")
-        mat.close()
-
 @client.command()
 async def fuck_on(ctx):
     await ctx.message.delete()
@@ -302,6 +280,25 @@ async def botinfo(ctx):
 
 @client.event
 async def on_message(message):
+    if fuck:
+        if msg.author.bot:
+            pass
+        else:
+            mes = msg.content.lower()
+            author = msg.author
+            server = msg.guild
+            print(f"{author.id} сказал: {mes} На сервере: {server.id}")
+            mat = open('mat.txt', 'r', encoding='utf-8')
+            for line in mat:
+                if mes.find(line[0:-1]) != -1:
+                    if msg.author.bot:
+                        pass
+                    else:
+                        print("Определил что это мат, удаляю...")
+                        await msg.delete()
+                        await msg.channel.send(f"{author.mention}, плохо выражаешься!")
+        mat.close()
+
     await client.process_commands(message) # Штука чтобы работали другие команды (ОСТОРОЖНО ЛОМАЕТ КОГИ(COGS)! В КОГАХ ОН НЕ НУЖЕН)
     if not message.guild: # Проверка что это ЛС
         chanel = client.get_channel( 698178283942182922 ) # Айди канала куда бот отправит сообщение
