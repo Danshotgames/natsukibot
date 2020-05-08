@@ -17,10 +17,7 @@ client = commands.Bot( command_prefix = '//' )
 
 client.remove_command('help')
 
-#Variables
-
-Команда: !leave_server [ID сервера]
-Результат: бот уходит с данного сервера.
+#Varia
 
 @client.command()
 #@commands.has_permissions(administrator = True)
