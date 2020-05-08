@@ -19,6 +19,13 @@ client.remove_command('help')
 
 #Varia
 
+
+@client.command()
+async def translate(ctx, l1="ru", l2="en", *, arg):
+    trans = googletrans.Translator()
+    result = trans.translate(arg, src=l1, dest=l2)
+    await ctx.send(result.text)
+
 @client.command()
 #@commands.has_permissions(administrator = True)
 async def leave_server(ctx, server_id: int = None):
