@@ -19,6 +19,21 @@ client.remove_command('help')
 
 #Variables
 
+Команда: !leave_server [ID сервера]
+Результат: бот уходит с данного сервера.
+
+@client.command()
+#@commands.has_permissions(administrator = True)
+async def leave_server(ctx, server_id: int = None):
+    if server_id == None:
+        await ctx.send('Укажите `ID` сервера!')
+    else:
+
+        to_leave = client.get_guild(server_id)
+
+        await to_leave.leave()
+        await ctx.send(embed = discord.Embed(description = f'**Я успешно прекратил обслуживание данного сервера.**', color=0x0c0c0c))
+ 
 
 #Messages
 
