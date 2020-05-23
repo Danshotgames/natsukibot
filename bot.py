@@ -155,7 +155,6 @@ async def botinfo(ctx):
     await ctx.send(embed=embed)
 
 @client.command()
-@commands.has_role("👑 VIP 👑")
 async def gif(ctx, arg, *, txt = ''):
     await ctx.message.delete()
     guild = ctx.guild
